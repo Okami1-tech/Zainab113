@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#100b1c">
+<title>For My Sarauniya — From Hamzain 🦁💜</title>
+
+<style>
+@import url('data:text/css,');
+
+:root {
+  --night: #100b1c;
+  --deep: #1b102a;
+  --purple: #b99aff;
+  --pink: #ffb8d2;
+  --gold: #f3d69b;
+  --cream: #fff4e9;
+  --muted: #d0c2dd;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  background: var(--night);
+  color: var(--cream);
+  font-family: Georgia, "Times New Roman", serif;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100svh;
+}
+
+button {
+  font: inherit;
+}
+
+#universe {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 50% 0%, #38214f 0%, transparent 55%),
+    radial-gradient(ellipse at 0% 100%, #27133b 0%, transparent 55%),
+    linear-gradient(160deg, #100b1c, #160e25 55%, #0b0914);
+}
+
+#stars, #effects {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ambient {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  filter: blur(75px);
+  opacity: .16;
+  animation: drift 13s ease-in-out infinite alternate;
+}
+
+.ambient.one {
+  background: #a46cff;
+  top: 15%;
+  left: -120px;
+}
+
+.ambient.two {
+  background: #ff8ab8;
+  bottom: 3%;
+  right: -120px;
+  animation-delay: -6s;
+}
+
+@keyframes drift {
+  to { transform: translate(50px, -40px) scale(1.15); }
+}
+
+#app {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100svh;
+}
+
+.chapter {
+  display: none;
+  width: 100%;
+  min-height: 100svh;
+  padding: 30px 22px 35px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  animation: arrive .85s ease both;
+}
+
+.chapter.active {
+  display: flex;
+}
+
+@keyframes arrive {
+  from { opacity: 0; transform: translateY(13px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 22px;
+}
+
+h1, h2, p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(37px, 10vw, 61px);
+  line-height: 1.08;
+  font-weight: normal;
+  letter-spacing: -1.8px;
+}
+
+h2 {
+  font-size: clamp(29px, 7vw, 42px);
+  line-height: 1.15;
+  font-weight: normal;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+
+.accent {
+  color: var(--pink);
+  font-style: italic;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.small {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.rule {
+  width: 52px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 18px auto 24px;
+}
+
+.main-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 49px;
+  padding: 14px 23px;
+  border: 1px solid rgba(243,214,155,.55);
+  border-radius: 999px;
+  background: rgba(255,255,255,.045);
+  color: var(--cream);
+  font-size: 13px;
+  letter-spacing: .6px;
+  cursor: pointer;
+  transition: .25s ease;
+  margin-top: 16px;
+  max-width: 100%;
+}
+
+.main-btn:active {
+  transform: scale(.97);
+}
+
+.main-btn:hover {
+  background: rgba(185,154,255,.14);
+  border-color: var(--pink);
+}
+
+.skip-note {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.3px;
+  color: #9d8bab;
+  margin-top: 20px;
+}
+
+.counter {
+  position: fixed;
+  z-index: 20;
+  top: 17px;
+  right: 18px;
+  font: 10px Arial, sans-serif;
+  letter-spacing: 2px;
+  color: #cbb8df;
+  display: none;
+}
+
+.counter.visible {
+  display: block;
+}
+
+.progress {
+  position: fixed;
+  z-index: 20;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  display: none;
+  background: rgba(255,255,255,.08);
+}
+
+.progress.visible {
+  display: block;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--purple), var(--pink), var(--gold));
+  transition: width .6s ease;
+}
+
+/* CHAPTER 1 */
+
+.opening-mark {
+  width: 178px;
+  height: 178px;
+  position: relative;
+  margin-bottom: 27px;
+  display: grid;
+  place-items: center;
+}
+
+.orbit {
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(243,214,155,.36);
+  border-radius: 50%;
+  animation: rotate 22s linear infinite;
+}
+
+.orbit::before, .orbit::after {
+  content: "✦";
+  position: absolute;
+  color: var(--gold);
+  font-size: 14px;
+}
+
+.orbit::before {
+  top: 11px;
+  left: 25px;
+}
+
+.orbit::after {
+  bottom: 15px;
+  right: 22px;
+}
+
+.orbit.inner {
+  inset: 19px;
+  border-color: rgba(255,184,210,.3);
+  animation-duration: 31s;
+  animation-direction: reverse;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+.lion-seal {
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 25%, #53376c, #21142f 70%);
+  box-shadow: 0 0 55px rgba(185,154,255,.18), inset 0 0 22px rgba(255,255,255,.04);
+  font-size: 52px;
+  animation: lionGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes lionGlow {
+  to { box-shadow: 0 0 70px rgba(255,184,210,.24), inset 0 0 22px rgba(255,255,255,.06); }
+}
+
+.signature {
+  color: var(--gold);
+  font-style: italic;
+  font-size: 17px;
+  margin-top: 7px;
+}
+
+/* CHAPTER 2 */
+
+.reveal-card {
+  width: min(100%, 350px);
+  padding: 27px 22px;
+  border: 1px solid rgba(243,214,155,.22);
+  background: linear-gradient(145deg, rgba(255,255,255,.065), rgba(255,255,255,.015));
+  border-radius: 22px;
+  margin: 8px auto 16px;
+  box-shadow: 0 20px 65px rgba(0,0,0,.18);
+}
+
+.teddy {
+  font-size: 74px;
+  display: block;
+  margin: 0 auto 16px;
+  filter: drop-shadow(0 9px 15px rgba(0,0,0,.25));
+  animation: teddyBob 3.3s ease-in-out infinite;
+}
+
+@keyframes teddyBob {
+  0%,100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+.secret {
+  display: none;
+  color: var(--cream);
+  line-height: 1.8;
+  font-size: 15px;
+  padding-top: 12px;
+  animation: arrive .6s ease both;
+}
+
+.secret.show {
+  display: block;
+}
+
+.tap-teddy {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* CHAPTER 3: WORDLESS SCENE */
+
+#chapter3 {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 48%, rgba(129,91,174,.18), transparent 44%),
+    linear-gradient(180deg, rgba(16,11,28,.25), rgba(16,11,28,.6));
+}
+
+.wordless-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.big-moon {
+  position: absolute;
+  width: 145px;
+  height: 145px;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 30%, #fff7ee, #ead6f6 52%, #b99acb 100%);
+  box-shadow: 0 0 35px rgba(238,215,255,.35), 0 0 120px rgba(185,154,255,.18);
+  animation: moonBreathe 5s ease-in-out infinite alternate;
+}
+
+@keyframes moonBreathe {
+  to { box-shadow: 0 0 55px rgba(238,215,255,.5), 0 0 145px rgba(185,154,255,.26); }
+}
+
+.moon-shadow {
+  position: absolute;
+  top: 9%;
+  left: calc(50% + 22px);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #21142f;
+  opacity: .14;
+}
+
+.scene-ground {
+  position: absolute;
+  bottom: -11%;
+  left: -20%;
+  width: 140%;
+  height: 36%;
+  border-radius: 50% 50% 0 0;
+  background: linear-gradient(180deg, #251533, #100b1c);
+  box-shadow: 0 -20px 50px rgba(185,154,255,.08);
+}
+
+.scene-lion {
+  position: absolute;
+  left: calc(50% - 70px);
+  bottom: 20%;
+  font-size: 95px;
+  filter: drop-shadow(0 0 18px rgba(243,214,155,.2));
+  animation: lionStill 5s ease-in-out infinite;
+}
+
+.scene-teddy {
+  position: absolute;
+  left: calc(50% + 20px);
+  bottom: 19%;
+  font-size: 46px;
+  transform: rotate(7deg);
+}
+
+.scene-heart {
+  position: absolute;
+  left: calc(50% + 13px);
+  bottom: 31%;
+  font-size: 25px;
+  animation: heartPulse 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(255,120,176,.5));
+}
+
+@keyframes lionStill {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes heartPulse {
+  0%,100% { transform: scale(.9); opacity: .75; }
+  50% { transform: scale(1.18); opacity: 1; }
+}
+
+.butterfly {
+  position: absolute;
+  font-size: 22px;
+  animation: flutter 8s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(255,184,210,.3));
+}
+
+.butterfly.b1 { left: 15%; top: 42%; }
+.butterfly.b2 { right: 15%; top: 32%; animation-delay: -3s; font-size: 18px; }
+.butterfly.b3 { left: 25%; top: 21%; animation-delay: -5s; font-size: 16px; }
+
+@keyframes flutter {
+  0%,100% { transform: translate(0,0) rotate(-10deg); }
+  35% { transform: translate(18px,-24px) rotate(12deg); }
+  70% { transform: translate(-8px,10px) rotate(-6deg); }
+}
+
+#chapter3 .scene-tap {
+  position: absolute;
+  bottom: 7%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: rgba(255,244,233,.4);
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-family: Arial, sans-serif;
+  animation: fade 4s ease-in-out infinite alternate;
+}
+
+@keyframes fade {
+  to { opacity: .4; }
+}
+
+/* CHAPTER 4 */
+
+.constellation {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 210px;
+  margin: 0 auto 22px;
+}
+
+.constellation svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.constellation path {
+  fill: none;
+  stroke: rgba(243,214,155,.5);
+  stroke-width: 1;
+  stroke-dasharray: 5 5;
+  animation: dash 20s linear infinite;
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: -100; }
+}
+
+.star-node {
+  position: absolute;
+  border: none;
+  background: transparent;
+  color: var(--gold);
+  font-size: 25px;
+  cursor: pointer;
+  text-shadow: 0 0 16px rgba(243,214,155,.5);
+  animation: starPulse 2s ease-in-out infinite alternate;
+}
+
+.star-node:nth-of-type(2) { animation-delay: -.7s; }
+.star-node:nth-of-type(3) { animation-delay: -1.2s; }
+.star-node:nth-of-type(4) { animation-delay: -.3s; }
+
+@keyframes starPulse {
+  to { transform: scale(1.2); text-shadow: 0 0 23px rgba(255,184,210,.8); }
+}
+
+.star-node.n1 { left: 10%; top: 38%; }
+.star-node.n2 { left: 35%; top: 12%; }
+.star-node.n3 { right: 28%; top: 42%; }
+.star-node.n4 { right: 8%; top: 14%; }
+.star-node.n5 { left: 47%; bottom: 6%; }
+
+.star-message {
+  min-height: 80px;
+  max-width: 330px;
+  margin: 0 auto;
+  padding: 16px;
+  border-top: 1px solid rgba(243,214,155,.18);
+  color: var(--cream);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* CHAPTER 5 */
+
+.letter-wrap {
+  width: min(100%, 390px);
+  text-align: left;
+  padding: 27px 22px;
+  border: 1px solid rgba(243,214,155,.23);
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.015));
+  box-shadow: 0 20px 70px rgba(0,0,0,.16);
+}
+
+.letter-wrap .letter-top {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 23px;
+}
+
+.letter-wrap p {
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 17px;
+  color: #e5d8eb;
+}
+
+.letter-wrap .dear {
+  font-size: 22px;
+  color: var(--pink);
+  font-style: italic;
+}
+
+.letter-sign {
+  text-align: right;
+  color: var(--gold);
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.8;
+  margin-top: 24px;
+}
+
+/* CHAPTER 6 */
+
+.dua-card {
+  width: min(100%, 360px);
+  padding: 28px 23px;
+  border-radius: 22px;
+  border: 1px solid rgba(185,154,255,.25);
+  background: linear-gradient(160deg, rgba(185,154,255,.1), rgba(255,255,255,.02));
+}
+
+.arabic {
+  font-size: 27px;
+  line-height: 1.9;
+  direction: rtl;
+  color: #f8e3bd;
+  margin-bottom: 14px;
+}
+
+.dua-card p {
+  font-size: 15px;
+}
+
+.amen {
+  color: var(--pink);
+  font-style: italic;
+  font-size: 19px;
+  margin-top: 20px;
+}
+
+/* CHAPTER 7 */
+
+.final-emblem {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 27px;
+}
+
+.final-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(243,214,155,.35);
+  border-radius: 50%;
+  animation: rotate 35s linear infinite;
+}
+
+.final-ring::before {
+  content: "✦";
+  position: absolute;
+  top: 12px;
+  left: 30px;
+  color: var(--gold);
+}
+
+.final-ring::after {
+  content: "✧";
+  position: absolute;
+  bottom: 16px;
+  right: 24px;
+  color: var(--pink);
+  font-size: 20px;
+}
+
+.final-heart {
+  font-size: 78px;
+  filter: drop-shadow(0 0 25px rgba(255,145,190,.3));
+  animation: heartPulse 2.2s ease-in-out infinite;
+}
+
+.final-lion {
+  position: absolute;
+  bottom: 2px;
+  right: 8px;
+  font-size: 40px;
+}
+
+.final-letter {
+  max-width: 360px;
+  color: #eadfed;
+  font-size: 16px;
+  line-height: 1.95;
+}
+
+.final-promise {
+  color: var(--pink);
+  font-size: clamp(26px, 7vw, 36px);
+  font-style: italic;
+  line-height: 1.4;
+  margin: 19px 0 12px;
+}
+
+.last-signature {
+  color: var(--gold);
+  font-size: 17px;
+  font-style: italic;
+  margin-top: 23px;
+}
+
+/* HEART PARTICLES */
+
+.particle {
+  position: fixed;
+  z-index: 30;
+  pointer-events: none;
+  font-size: 18px;
+  animation: floatAway 2.6s ease-out forwards;
+}
+
+@keyframes floatAway {
+  0% { opacity: 0; transform: translateY(10px) scale(.4) rotate(0deg); }
+  15% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-150px) scale(1.2) rotate(35deg); }
+}
+
+@media (max-height: 700px) {
+  .chapter { padding-top: 26px; padding-bottom: 25px; }
+  .opening-mark { width: 135px; height: 135px; margin-bottom: 18px; }
+  .lion-seal { width: 80px; height: 80px; font-size: 43px; }
+  .eyebrow { margin-bottom: 14px; }
+  h1 { font-size: clamp(33px, 8vw, 48px); }
+  .big-moon { width: 115px; height: 115px; }
+  .scene-lion { font-size: 78px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="universe">
+  <canvas id="stars"></canvas>
+  <div class="ambient one"></div>
+  <div class="ambient two"></div>
+  <canvas id="effects"></canvas>
+</div>
+
+<div class="counter" id="counter">01 / 07</div>
+<div class="progress" id="progress"><span id="progressFill"></span></div>
+
+<main id="app">
+
+  <!-- CHAPTER 1: THE INVITATION -->
+  <section class="chapter active" id="chapter1">
+    <div class="eyebrow">A little universe, made for one person</div>
+
+    <div class="opening-mark">
+      <div class="orbit"></div>
+      <div class="orbit inner"></div>
+      <div class="lion-seal">🦁</div>
+    </div>
+
+    <h1>For my<br><span class="accent">Sarauniya.</span></h1>
+
+    <div class="rule"></div>
+
+    <p>
+      There are things I wish I could place<br>
+      gently into your hands...
+    </p>
+
+    <p class="small">
+      Not because words are enough,<br>
+      but because sometimes they are where we begin.
+    </p>
+
+    <div class="signature">From your Hamzain 💜</div>
+
+    <button class="main-btn" onclick="go(2)">
+      Enter our little universe <span>✧</span>
+    </button>
+
+    <div class="skip-note">MADE WITH LOVE · JUST FOR YOU</div>
+  </section>
+
+
+  <!-- CHAPTER 2: THE LITTLE GUARDIAN -->
+  <section class="chapter" id="chapter2">
+    <div class="eyebrow">A tiny visitor has a message</div>
+
+    <h2>Someone came<br>to see you. <span class="accent">🧸</span></h2>
+
+    <p class="small">
+      He travelled a very long way from the heart of your Lion.
+    </p>
+
+    <div class="reveal-card">
+      <div class="tap-teddy" onclick="revealTeddy()" role="button" tabindex="0" aria-label="Tap the teddy bear to reveal a message">
+        <span class="teddy">🧸</span>
+        <div class="small gold">YOUR LITTLE TEDDY BEAR</div>
+        <div class="small" style="margin-top:8px">Tap his little paw to hear his message ♡</div>
+      </div>
+
+      <div class="secret" id="teddySecret">
+        Psst... Sarauniya. 🤎<br><br>
+        Your Lion asked me to remind you of something.<br><br>
+        You don't have to be brilliant every second.<br>
+        You don't have to have every answer.<br>
+        You don't have to turn every difficult day into a victory.<br><br>
+        You are allowed to breathe, to rest, to be held by kindness
+        and to simply be yourself.<br><br>
+        <span class="accent">And yes... your Lion thinks you're very, very precious.</span>
+      </div>
+    </div>
+
+    <button class="main-btn" onclick="go(3)">There's something else waiting →</button>
+  </section>
+
+
+  <!-- CHAPTER 3: WORDLESS SCENE -->
+  <section class="chapter" id="chapter3" aria-label="A quiet, wordless moonlit scene">
+    <div class="wordless-scene">
+      <div class="big-moon"></div>
+      <div class="moon-shadow"></div>
+
+      <div class="butterfly b1">🦋</div>
+      <div class="butterfly b2">🦋</div>
+      <div class="butterfly b3">✧</div>
+
+      <div class="scene-ground"></div>
+      <div class="scene-lion">🦁</div>
+      <div class="scene-teddy">🧸</div>
+      <div class="scene-heart">💗</div>
+
+      <div class="scene-tap">A QUIET MOMENT · TAP ANYWHERE</div>
+    </div>
+  </section>
+
+
+  <!-- CHAPTER 4: CONSTELLATION -->
+  <section class="chapter" id="chapter4">
+    <div class="eyebrow">Five little stars, five little truths</div>
+
+    <h2>A sky full of<br><span class="accent">little reminders.</span></h2>
+
+    <p class="small">
+      Touch each star. Your Lion left something there for you.
+    </p>
+
+    <div class="constellation">
+      <svg viewBox="0 0 320 210" aria-hidden="true">
+        <path d="M35 95 L100 35 L195 105 L265 40 L170 185 L35 95"/>
+      </svg>
+
+      <button class="star-node n1" onclick="starMessage(0)" aria-label="First star">✦</button>
+      <button class="star-node n2" onclick="starMessage(1)" aria-label="Second star">✧</button>
+      <button class="star-node n3" onclick="starMessage(2)" aria-label="Third star">✦</button>
+      <button class="star-node n4" onclick="starMessage(3)" aria-label="Fourth star">✧</button>
+      <button class="star-node n5" onclick="starMessage(4)" aria-label="Fifth star">✦</button>
+    </div>
+
+    <div class="star-message" id="starMessage" aria-live="polite">
+      Choose a star, my Queen. 💜
+    </div>
+
+    <button class="main-btn" onclick="go(5)">Open the letter ✉</button>
+  </section>
+
+
+  <!-- CHAPTER 5: THE LETTER -->
+  <section class="chapter" id="chapter5">
+    <div class="eyebrow">Words from your Lion's heart</div>
+
+    <div class="letter-wrap">
+      <div class="letter-top">PRIVATE LETTER · FOR SARAUNIYA</div>
+
+      <div class="dear">My Sarauniya, 💜</div>
+
+      <p>
+        I wish you could see yourself for a moment through the eyes
+        of someone who notices the little things about you.
+      </p>
+
+      <p>
+        Your intelligence. The way you think. The thoughtfulness
+        behind the things you say. The way you can encourage me
+        to take my studies seriously, even when my own mind is
+        wandering somewhere else.
+      </p>
+
+      <p>
+        I notice the little things, my Queen. And I hope you never
+        feel that you have to become someone else to deserve love.
+        You don't have to perform for me. You don't have to be
+        perfect to be precious.
+      </p>
+
+      <p>
+        I cannot promise that I will always know the right words
+        or that I will never make a mistake. But I want to keep
+        learning how to listen to you, how to understand you,
+        how to be patient with you, and how to treat your heart
+        with the care it deserves.
+      </p>
+
+      <p>
+        When life feels heavy, I want to be someone you can speak
+        honestly with. When something beautiful happens, I want
+        to celebrate with you. And on the ordinary days, when
+        nothing extraordinary happens at all, I still want to
+        appreciate the blessing of knowing you.
+      </p>
+
+      <p>
+        I ask Allah to keep correcting me, growing me, and teaching
+        me how to love with gentleness, honesty, responsibility
+        and mercy.
+      </p>
+
+      <p>
+        Because, Hayati, loving you is not just about saying
+        beautiful things. It is also about the kind of man I
+        choose to become.
+      </p>
+
+      <div class="letter-sign">
+        Always with sincere affection,<br>
+        Your Hamzain 🦁💜
+      </div>
+    </div>
+
+    <button class="main-btn" onclick="go(6)">One more thing, my Queen…</button>
+  </section>
+
+
+  <!-- CHAPTER 6: DU'A -->
+  <section class="chapter" id="chapter6">
+    <div class="eyebrow">A prayer from my heart to Allah</div>
+
+    <h2>For you, I make<br><span class="accent">du’a.</span></h2>
+
+    <div class="rule"></div>
+
+    <div class="dua-card">
+      <div style="font-size:34px; margin-bottom:12px">🤲🏻</div>
+
+      <p>
+        Ya Allah, You know what is in our hearts better than we
+        ever could explain.
+      </p>
+
+      <p>
+        Please protect my Sarauniya, guide her, grant her peace
+        when she feels overwhelmed, strength when she feels tired,
+        and ease in the things that weigh upon her heart.
+      </p>
+
+      <p>
+        Make me someone who brings goodness into her life.
+        Teach me to be patient when understanding takes time,
+        gentle when words matter most, honest when the truth
+        is difficult, and responsible with every trust You place
+        in my hands.
+      </p>
+
+      <p>
+        If this love is good for our deen and our lives, bless it,
+        purify our intentions, and make our path towards Nikkah
+        easy, beautiful and pleasing to You.
+      </p>
+
+      <p>
+        Keep us close to You, and never let our affection for
+        each other become a reason we forget You.
+      </p>
+
+      <div class="amen">Ameen, Ya Rabb. 🤍</div>
+    </div>
+
+    <button class="main-btn" onclick="go(7)">Come closer, my Sarauniya ♡</button>
+  </section>
+
+
+  <!-- CHAPTER 7: THE FINAL REVEAL -->
+  <section class="chapter" id="chapter7">
+    <div class="eyebrow">If you remember only one thing</div>
+
+    <div class="final-emblem">
+      <div class="final-ring"></div>
+      <div class="final-heart">💗</div>
+      <div class="final-lion">🦁</div>
+    </div>
+
+    <h2>My Queen.<br>My Hayati.</h2>
+
+    <div class="rule"></div>
+
+    <div class="final-letter">
+      My Sarauniya, you will have days when you feel strong
+      and days when you need a little more gentleness.
+
+      You will have moments when you know exactly what to do
+      and moments when you simply need a breath.
+
+      You never have to pretend with me.
+
+      I may not always be able to change what you're going through.
+      I may not always have a perfect answer. But I want to listen,
+      I want to try, and I want to stand beside you with sincerity.
+
+      So when the world feels loud, when your heart needs a little
+      reassurance, or when you just need someone to remind you
+      that you matter...
+
+      <div class="final-promise">
+        Your Lion is always here.
+      </div>
+
+      Not because I think I can carry every burden for you,
+      but because I want you to know that you have someone
+      who cares, who will listen, and who will keep trying
+      to show up with love and respect.
+
+      And whatever Allah writes for our future, I pray we meet
+      every chapter with faith, kindness and grateful hearts.
+    </div>
+
+    <div class="last-signature">
+      With all my affection,<br>
+      Your Hamzain 🦁<br>
+      <span style="font-size:13px; color:#cdbce0">To my Sarauniya, always. 💜</span>
+    </div>
+
+    <button class="main-btn" onclick="celebrate()">
+      One last little surprise ✨
+    </button>
+
+    <p class="small" id="finalSurprise" style="display:none; margin-top:20px; color:#f3d69b">
+      If I could give you the stars, I would still ask Allah to give
+      you something more precious: a heart that feels at peace,
+      a life filled with barakah, and a love that helps you grow
+      closer to Him. Ameen. 🤍
+    </p>
+
+    <button class="main-btn" onclick="restart()" style="border-color:rgba(185,154,255,.25)">
+      Revisit our little universe ↺
+    </button>
+  </section>
+
+</main>
+
+<script>
+/* -------------------------------
+   CHAPTER NAVIGATION
+-------------------------------- */
+
+const total = 7;
+let current = 1;
+
+const counter = document.getElementById("counter");
+const progress = document.getElementById("progress");
+const progressFill = document.getElementById("progressFill");
+
+function go(number) {
+  if (number < 1 || number > total) return;
+
+  current = number;
+
+  document.querySelectorAll(".chapter").forEach(section => {
+    section.classList.remove("active");
+  });
+
+  const next = document.getElementById("chapter" + number);
+  next.classList.add("active");
+
+  if (number === 3) {
+    counter.classList.remove("visible");
+    progress.classList.remove("visible");
+  } else {
+    counter.classList.add("visible");
+    progress.classList.add("visible");
+    counter.textContent =
+      String(number).padStart(2, "0") + " / " +
+      String(total).padStart(2, "0");
+
+    progressFill.style.width = (number / total * 100) + "%";
+  }
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  if (number === 7) {
+    setTimeout(() => burstHearts(window.innerWidth / 2, window.innerHeight / 2), 350);
+  }
+}
+
+/* The wordless scene advances when touched. */
+document.getElementById("chapter3").addEventListener("click", () => {
+  if (current === 3) go(4);
+});
+
+/* -------------------------------
+   TEDDY BEAR REVEAL
+-------------------------------- */
+
+function revealTeddy() {
+  const secret = document.getElementById("teddySecret");
+  secret.classList.toggle("show");
+
+  if (secret.classList.contains("show")) {
+    burstHearts(window.innerWidth / 2, window.innerHeight / 2);
+  }
+}
+
+document.querySelector(".tap-teddy").addEventListener("keydown", event => {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    revealTeddy();
+  }
+});
+
+/* -------------------------------
+   CONSTELLATION STARS
+-------------------------------- */
+
+const messages = [
+  "You are allowed to be proud of how far you've come, even when you still have so much you want to achieve. I see your effort, my Queen. ✨",
+
+  "Your intelligence is beautiful, but so is your thoughtfulness. The way you consider things and the way you care are parts of you worth appreciating. 💜",
+
+  "You do not need to hide every difficult feeling behind a smile. I hope you always feel free to be honest about what is on your heart. 🦋",
+
+  "I appreciate the little ways you encourage me. You may not always realise how much a few thoughtful words can mean to me. 🌙",
+
+  "And this one is simple: you are not loved because you are perfect. You are a person with a heart, dreams, strengths and vulnerable moments—and you deserve to be treated with kindness. 🤍"
+];
+
+function starMessage(index) {
+  const box = document.getElementById("starMessage");
+  box.style.opacity = "0";
+
+  setTimeout(() => {
+    box.textContent = messages[index];
+    box.style.transition = "opacity .5s ease";
+    box.style.opacity = "1";
+  }, 180);
+
+  burstHearts(
+    window.innerWidth * (0.3 + Math.random() * 0.4),
+    window.innerHeight * 0.43
+  );
+}
+
+/* -------------------------------
+   FINAL SURPRISE
+-------------------------------- */
+
+function celebrate() {
+  const surprise = document.getElementById("finalSurprise");
+  surprise.style.display = "block";
+  surprise.style.animation = "arrive .9s ease both";
+
+  for (let i = 0; i < 3; i++) {
+    setTimeout(() => {
+      burstHearts(
+        Math.random() * window.innerWidth,
+        window.innerHeight * (0.35 + Math.random() * 0.4)
+      );
+    }, i * 350);
+  }
+}
+
+function restart() {
+  document.getElementById("teddySecret").classList.remove("show");
+  document.getElementById("starMessage").textContent =
+    "Choose a star, my Queen. 💜";
+  document.getElementById("finalSurprise").style.display = "none";
+  go(1);
+}
+
+/* -------------------------------
+   FLOATING HEARTS & BUTTERFLIES
+-------------------------------- */
+
+const particleSymbols = ["💜", "♡", "✧", "🦋", "💗", "✦", "🤍"];
+
+function burstHearts(x, y) {
+  for (let i = 0; i < 12; i++) {
+    const particle = document.createElement("span");
+    particle.className = "particle";
+    particle.textContent =
+      particleSymbols[Math.floor(Math.random() * particleSymbols.length)];
+
+    particle.style.left = (x + (Math.random() - .5) * 130) + "px";
+    particle.style.top = (y + (Math.random() - .5) * 45) + "px";
+    particle.style.fontSize = (13 + Math.random() * 14) + "px";
+    particle.style.animationDuration = (1.8 + Math.random() * 1.4) + "s";
+
+    document.body.appendChild(particle);
+    setTimeout(() => particle.remove(), 3400);
+  }
+}
+
+/* -------------------------------
+   AMBIENT STARFIELD
+-------------------------------- */
+
+const starCanvas = document.getElementById("stars");
+const starCtx = starCanvas.getContext("2d");
+
+let starList = [];
+let w = 0;
+let h = 0;
+let dpr = 1;
+
+function resizeStars() {
+  dpr = Math.min(window.devicePixelRatio || 1, 2);
+  w = window.innerWidth;
+  h = window.innerHeight;
+
+  starCanvas.width = w * dpr;
+  starCanvas.height = h * dpr;
+  starCanvas.style.width = w + "px";
+  starCanvas.style.height = h + "px";
+
+  starCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  starList = Array.from({ length: Math.min(130, Math.floor(w * h / 6500)) }, () => ({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    radius: Math.random() * 1.3 + .25,
+    alpha: Math.random() * .7 + .15,
+    speed: Math.random() * .006 + .002,
+    phase: Math.random() * Math.PI * 2
+  }));
+}
+
+let frame = 0;
+
+function drawStars() {
+  frame++;
+  starCtx.clearRect(0, 0, w, h);
+
+  starList.forEach(star => {
+    const twinkle = Math.sin(frame * star.speed + star.phase);
+    const alpha = Math.max(.08, star.alpha + twinkle * .22);
+
+    starCtx.beginPath();
+    starCtx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+    starCtx.fillStyle = `rgba(255, 239, 255, ${alpha})`;
+    starCtx.fill();
+  });
+
+  requestAnimationFrame(drawStars);
+}
+
+window.addEventListener("resize", resizeStars);
+resizeStars();
+drawStars();
+
+/* -------------------------------
+   GENTLE AMBIENT SPARKLES
+-------------------------------- */
+
+const effectCanvas = document.getElementById("effects");
+const effectCtx = effectCanvas.getContext("2d");
+let sparkles = [];
+
+function resizeEffects() {
+  effectCanvas.width = window.innerWidth * dpr;
+  effectCanvas.height = window.innerHeight * dpr;
+  effectCanvas.style.width = window.innerWidth + "px";
+  effectCanvas.style.height = window.innerHeight + "px";
+  effectCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+
+function drawSparkles() {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  if (sparkles.length < 25 && Math.random() < .1) {
+    sparkles.push({
+      x: Math.random() * width,
+      y: height + 10,
+      size: Math.random() * 2 + .5,
+      speed: Math.random() * .35 + .12,
+      alpha: Math.random() * .4 + .1
+    });
+  }
+
+  effectCtx.clearRect(0, 0, width, height);
+
+  sparkles.forEach(s => {
+    s.y -= s.speed;
+    s.x += Math.sin(frame * .01 + s.y) * .12;
+
+    effectCtx.beginPath();
+    effectCtx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+    effectCtx.fillStyle = `rgba(255, 215, 239, ${s.alpha})`;
+    effectCtx.fill();
+  });
+
+  sparkles = sparkles.filter(s => s.y > -10);
+  requestAnimationFrame(drawSparkles);
+}
+
+window.addEventListener("resize", resizeEffects);
+resizeEffects();
+drawSparkles();
+
+/* Begin with a quiet, private little universe. */
+go(1);
+</script>
+
+</body>
+</html>
